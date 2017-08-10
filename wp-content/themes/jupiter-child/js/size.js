@@ -4,6 +4,17 @@ $(document).ready(function () {
     
      // Window Size 782
      if (windowSize > 782) {
+         // Sticky Side Nav Area 
+        $("ul.mk-tabs-tabs, .e-tab-container>nav, .as-team-nav, .company-nav").stick_in_parent({offset_top: 150});
+
+        $('ul.mk-tabs-tabs, .programs-tabs-link-column, .as-team-nav, .company-nav').on('sticky_kit:bottom', function(e) {
+        $(this).parent().css('position', 'static');
+        }) 
+        $('ul.mk-tabs-tabs, .programs-tabs-link-column, .as-team-nav, .company-nav').on('sticky_kit:unbottom', function(e) {
+        $(this).parent().css('position', 'relative');
+        });
+         
+         
         $('.safety-accordion-section, .outfitters-accordion-section').addClass('vc_active');
         // ON SCROLL HIDE LOGO ON SPLASH PAGE
         $(window).scroll(function() {

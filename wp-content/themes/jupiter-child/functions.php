@@ -37,5 +37,5 @@ function scripts_method() {
 }
 
 
-add_action( 'wp_enqueue_scripts', 'oneday_enqueue_style' );
+add_action( 'wp_enqueue_style', 'oneday_enqueue_style' );
 add_action( 'wp_enqueue_scripts', 'scripts_method' );
