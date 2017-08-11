@@ -24,6 +24,7 @@ $gray-link-hover: #B7B7B7;
 $green: #B4D333;
 $orange: #F47920;
 $pink: #EC008A;
+$platinum: #788694;
 $purple: #923a96;
 $red: #B3282D;
 $silver: #959595;
@@ -450,7 +451,7 @@ a {
 }
 p {
     color: $body-copy;
-    font-size: 18px !important;
+    font-size: 18px;
 }
 sup {
     vertical-align: inherit;
@@ -1922,7 +1923,22 @@ display: inline-block;
     }
 }
 
-// === PROGRAMS/AMBASSADOR PAGE STYLING === //
+// === PROGRAMS/AMBASSADOR PAGE STYLING with OneWalk Changes === //
+.rewards-x {
+    text-align: center;
+    display: block;
+    min-height: 146px;
+    position: relative;
+    p {
+        margin-bottom: 0px;
+        top: 50%;
+        margin-top: -15px;
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
 
 #section-refer-and-raise{
     .refer-and-raise-inner-row {
@@ -1956,7 +1972,7 @@ display: inline-block;
 }
 .ambassador-levels-column {
     .vc_column-inner {
-        padding: 0 5px;
+        padding: 0;
         .wpb_wrapper{
             &:first-child {
                 background: none;
@@ -1971,53 +1987,163 @@ display: inline-block;
             }
         }
     }
+    .vc_col-sm-3,
+    .vc_col-sm-2{
+        width: 20% !important;
+        @media screen and (max-width: 768px) {
+            width: auto !important;
+        }
+    }
+    .lvl-description {
+        background: #ebebeb;
+        p {
+            text-align: center;
+            padding: 51px 10px;
+            font-size: 15px;
+        }
+    }
     .ambassador-bronze,
     .ambassador-silver,
     .ambassador-gold,
     .ambassador-platinum {
-        background: $gray;
+        min-height: 266px;
         h4 {
-            padding: 10px 5px 5px;
+            padding: 15px 5px;
             color: $white;
         }
         p {
-            font-size: 12px;
+            font-size: 15px !important;
             margin-bottom: 10px;
             padding: 0 5px;
             strong {
-                font-size: 16px;
+                font-size: 24px;
             }
         }
     }
     .ambassador-bronze {
+        background: #f5ebe2;
         h4 {
             background: $bronze;
         }
     }
     .ambassador-silver {
+        background: #ededed;
         h4 {
             background: $silver;
         }
     }
     .ambassador-gold {
+        background: #edebca;
         h4 {
-            background: $tan-gold;
+            background: #baae2d;
         }
     }
     .ambassador-platinum {
+        background: #dde1e4;
         h4 {
             background: #5c6f7d;
+        }
+    }
+    .rewards-walker-bronze,
+    .rewards-walker-silver,
+    .rewards-walker-gold,
+    .rewards-walker-platinum{
+        .wpb_single_image.vc_align_center {
+            padding: 53px 5px;
+            margin-bottom: 0px;
+        }
+    }
+    .rewards-walker-bronze {
+        .bronze-img-bg,
+        .rewards-x{
+            background: #eae2db;
+            &:nth-child(even) {
+                background-color: #f6ece2;
+            }
+        }
+        .rewards-x {
+            text-align: center;
+            display: block;
+            min-height: 146px;
+            p {
+                text-align: center;
+            }
+        }
+    }
+    .rewards-walker-silver {
+        .silver-img-bg,
+        .rewards-x{
+            background-color: #e4e4e4;
+            &:nth-child(even) {
+                background-color: #ededed;
+            }
+        }
+    }
+    .rewards-walker-gold {
+        .gold-img-bg,
+        .rewards-x{
+            background-color: #e4e2c7;
+            &:nth-child(even) {
+                background-color: #edebca;
+            }
+        }
+    }
+    .rewards-walker-platinum {
+        .platinum-img-bg{
+            background-color: #d8dadc;
+            &:nth-child(even) {
+                background-color: #dde1e4;
+            }
+        } 
+    }
+    .reward-description {
+        @extend .lvl-description;
+        background: none;
+        .mk-text-block {
+            min-height: 146px;
+            background: #ebebeb;
+            &:nth-child(even) {
+                background-color: #ffffff;
+            }
+        }
+        p {
+            padding: 25px 10px;
+            margin-bottom: 0px;
+            font-size: 12px !important;
+            text-align: left;
         }
     }
 }
 
 .levels-header {
-    background: $blue;
+    background: $purple;
     padding: 10px 0;
-    margin-bottom: 20px !important;
-    h2 {
+    h2, p {
         color: $white;
         margin-bottom: 0px;
+    }
+    p {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+.ambassadors-search-row {
+    background: #f5f5f5;
+    padding-top: 35px;
+    h1 {
+        text-align: center;
+        color: $orange;
+    }
+    input {
+        display: block;
+        margin: 0 auto;
+        width: 280px;
+        border: 1px solid $orange;
+        margin-top: 25px;
+        &:focus {
+            border: 1px solid $orange;
+        }
     }
 }
 
@@ -3419,14 +3545,16 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .bronze-top-list {		
     border: 1px solid #ebebeb;		
     padding: 0px;		
-    max-width: 355px;		
-    margin-right: 20px;		
+    max-width: 355px;
+    .vc_column-inner {
+        padding: 0px;
+    }
     h5 {		
         background: $bronze;		
         color: $white;		
-        padding: 20px 50px;		
+        padding: 20px 10px;		
         text-align: center;		
-        font-size: 31px;		
+        font-size: 20px;		
     }		
 }		
 .silver-top-list {		
@@ -3441,7 +3569,21 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     h5 {		
         background: $tan-gold;		
     }		
-}		
+}
+.gold-top-list {		
+    @extend .bronze-top-list;		
+    margin-right: 0px;		
+    h5 {		
+        background: $tan-gold;		
+    }		
+}
+.platinum-top-list {		
+    @extend .bronze-top-list;		
+    margin-right: 0px;		
+    h5 {		
+        background: $platinum;		
+    }		
+}
 // =============== OD18 Custom Classes =============== //		
 .no-padding-right {		
     padding-right: 0px;
@@ -3534,7 +3676,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .infi-content-wrapper {
     .mk-text-block {
         h2 {
-            color: $blue;
+            color: $white;
         }   
     }
 }

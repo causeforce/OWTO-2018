@@ -329,7 +329,7 @@ a {
 }
 p {
   color: #6b767d;
-  font-size: 18px !important;
+  font-size: 18px;
 }
 sup {
   vertical-align: inherit;
@@ -1542,6 +1542,21 @@ span.vc_tta-title-text.display-none-accordion:after {
     margin: 100px 0;
   }
 }
+.rewards-x {
+  text-align: center;
+  display: block;
+  min-height: 146px;
+  position: relative;
+}
+.rewards-x p {
+  margin-bottom: 0px;
+  top: 50%;
+  margin-top: -15px;
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
 #section-refer-and-raise .refer-and-raise-inner-row .vc_col-sm-4 {
   border-right: 2px solid #dadada;
 }
@@ -1567,7 +1582,7 @@ span.vc_tta-title-text.display-none-accordion:after {
   font-size: 12px;
 }
 .ambassador-levels-column .vc_column-inner {
-  padding: 0 5px;
+  padding: 0;
 }
 .ambassador-levels-column .vc_column-inner .wpb_wrapper:first-child {
   background: none;
@@ -1580,41 +1595,142 @@ span.vc_tta-title-text.display-none-accordion:after {
 .ambassador-levels-column .vc_column-inner .wpb_wrapper .ribbionst0 {
   fill: #ffc627 !important;
 }
+.ambassador-levels-column .vc_col-sm-3, .ambassador-levels-column .vc_col-sm-2 {
+  width: 20% !important;
+}
+@media screen and (max-width: 768px) {
+  .ambassador-levels-column .vc_col-sm-3, .ambassador-levels-column .vc_col-sm-2 {
+    width: auto !important;
+  }
+}
+.ambassador-levels-column .lvl-description, .ambassador-levels-column .reward-description {
+  background: #ebebeb;
+}
+.ambassador-levels-column .lvl-description p, .ambassador-levels-column .reward-description p {
+  text-align: center;
+  padding: 51px 10px;
+  font-size: 15px;
+}
 .ambassador-levels-column .ambassador-bronze, .ambassador-levels-column .od-ambassador-bronze, .ambassador-levels-column .ambassador-silver, .ambassador-levels-column .od-ambassador-silver, .ambassador-levels-column .ambassador-gold, .ambassador-levels-column .od-ambassador-gold, .ambassador-levels-column .ambassador-platinum {
-  background: #bfbfbf;
+  min-height: 266px;
 }
 .ambassador-levels-column .ambassador-bronze h4, .ambassador-levels-column .od-ambassador-bronze h4, .ambassador-levels-column .ambassador-silver h4, .ambassador-levels-column .od-ambassador-silver h4, .ambassador-levels-column .ambassador-gold h4, .ambassador-levels-column .od-ambassador-gold h4, .ambassador-levels-column .ambassador-platinum h4 {
-  padding: 10px 5px 5px;
+  padding: 15px 5px;
   color: #fff;
 }
 .ambassador-levels-column .ambassador-bronze p, .ambassador-levels-column .od-ambassador-bronze p, .ambassador-levels-column .ambassador-silver p, .ambassador-levels-column .od-ambassador-silver p, .ambassador-levels-column .ambassador-gold p, .ambassador-levels-column .od-ambassador-gold p, .ambassador-levels-column .ambassador-platinum p {
-  font-size: 12px;
+  font-size: 15px !important;
   margin-bottom: 10px;
   padding: 0 5px;
 }
 .ambassador-levels-column .ambassador-bronze p strong, .ambassador-levels-column .od-ambassador-bronze p strong, .ambassador-levels-column .ambassador-silver p strong, .ambassador-levels-column .od-ambassador-silver p strong, .ambassador-levels-column .ambassador-gold p strong, .ambassador-levels-column .od-ambassador-gold p strong, .ambassador-levels-column .ambassador-platinum p strong {
-  font-size: 16px;
+  font-size: 24px;
+}
+.ambassador-levels-column .ambassador-bronze, .ambassador-levels-column .od-ambassador-bronze {
+  background: #f5ebe2;
 }
 .ambassador-levels-column .ambassador-bronze h4, .ambassador-levels-column .od-ambassador-bronze h4 {
   background: #b86101;
 }
+.ambassador-levels-column .ambassador-silver, .ambassador-levels-column .od-ambassador-silver {
+  background: #ededed;
+}
 .ambassador-levels-column .ambassador-silver h4, .ambassador-levels-column .od-ambassador-silver h4 {
   background: #959595;
 }
+.ambassador-levels-column .ambassador-gold, .ambassador-levels-column .od-ambassador-gold {
+  background: #edebca;
+}
 .ambassador-levels-column .ambassador-gold h4, .ambassador-levels-column .od-ambassador-gold h4 {
-  background: #beab1f;
+  background: #baae2d;
+}
+.ambassador-levels-column .ambassador-platinum {
+  background: #dde1e4;
 }
 .ambassador-levels-column .ambassador-platinum h4 {
   background: #5c6f7d;
 }
-.levels-header {
-  background: #00baf2;
-  padding: 10px 0;
-  margin-bottom: 20px !important;
+.ambassador-levels-column .rewards-walker-bronze .wpb_single_image.vc_align_center, .ambassador-levels-column .rewards-walker-silver .wpb_single_image.vc_align_center, .ambassador-levels-column .rewards-walker-gold .wpb_single_image.vc_align_center, .ambassador-levels-column .rewards-walker-platinum .wpb_single_image.vc_align_center {
+  padding: 53px 5px;
+  margin-bottom: 0px;
 }
-.levels-header h2 {
+.ambassador-levels-column .rewards-walker-bronze .bronze-img-bg, .ambassador-levels-column .rewards-walker-bronze .rewards-x {
+  background: #eae2db;
+}
+.ambassador-levels-column .rewards-walker-bronze .bronze-img-bg:nth-child(even), .ambassador-levels-column .rewards-walker-bronze .rewards-x:nth-child(even) {
+  background-color: #f6ece2;
+}
+.ambassador-levels-column .rewards-walker-bronze .rewards-x {
+  text-align: center;
+  display: block;
+  min-height: 146px;
+}
+.ambassador-levels-column .rewards-walker-bronze .rewards-x p {
+  text-align: center;
+}
+.ambassador-levels-column .rewards-walker-silver .silver-img-bg, .ambassador-levels-column .rewards-walker-silver .rewards-x {
+  background-color: #e4e4e4;
+}
+.ambassador-levels-column .rewards-walker-silver .silver-img-bg:nth-child(even), .ambassador-levels-column .rewards-walker-silver .rewards-x:nth-child(even) {
+  background-color: #ededed;
+}
+.ambassador-levels-column .rewards-walker-gold .gold-img-bg, .ambassador-levels-column .rewards-walker-gold .rewards-x {
+  background-color: #e4e2c7;
+}
+.ambassador-levels-column .rewards-walker-gold .gold-img-bg:nth-child(even), .ambassador-levels-column .rewards-walker-gold .rewards-x:nth-child(even) {
+  background-color: #edebca;
+}
+.ambassador-levels-column .rewards-walker-platinum .platinum-img-bg {
+  background-color: #d8dadc;
+}
+.ambassador-levels-column .rewards-walker-platinum .platinum-img-bg:nth-child(even) {
+  background-color: #dde1e4;
+}
+.ambassador-levels-column .reward-description {
+  background: none;
+}
+.ambassador-levels-column .reward-description .mk-text-block {
+  min-height: 146px;
+  background: #ebebeb;
+}
+.ambassador-levels-column .reward-description .mk-text-block:nth-child(even) {
+  background-color: #fff;
+}
+.ambassador-levels-column .reward-description p {
+  padding: 25px 10px;
+  margin-bottom: 0px;
+  font-size: 12px !important;
+  text-align: left;
+}
+.levels-header {
+  background: #923a96;
+  padding: 10px 0;
+}
+.levels-header h2, .levels-header p {
   color: #fff;
   margin-bottom: 0px;
+}
+.levels-header p {
+  text-align: center;
+  padding: 0 20px;
+}
+.ambassadors-search-row {
+  background: #f5f5f5;
+  padding-top: 35px;
+}
+.ambassadors-search-row h1 {
+  text-align: center;
+  color: #f47920;
+}
+.ambassadors-search-row input {
+  display: block;
+  margin: 0 auto;
+  width: 280px;
+  border: 1px solid #f47920;
+  margin-top: 25px;
+}
+.ambassadors-search-row input:focus {
+  border: 1px solid #f47920;
 }
 .programs-front-row, .as-team-row, .company-row {
   margin-top: 125px;
@@ -2794,18 +2910,20 @@ span.vc_tta-title-text.display-none-accordion:after {
 .top-amb-row .search-amb:focus {
   border: 2px solid #f47920;
 }
-.bronze-top-list, .silver-top-list, .gold-top-list {
+.bronze-top-list, .silver-top-list, .gold-top-list, .platinum-top-list {
   border: 1px solid #ebebeb;
   padding: 0px;
   max-width: 355px;
-  margin-right: 20px;
 }
-.bronze-top-list h5, .silver-top-list h5, .gold-top-list h5 {
+.bronze-top-list .vc_column-inner, .silver-top-list .vc_column-inner, .gold-top-list .vc_column-inner, .platinum-top-list .vc_column-inner {
+  padding: 0px;
+}
+.bronze-top-list h5, .silver-top-list h5, .gold-top-list h5, .platinum-top-list h5 {
   background: #b86101;
   color: #fff;
-  padding: 20px 50px;
+  padding: 20px 10px;
   text-align: center;
-  font-size: 31px;
+  font-size: 20px;
 }
 .silver-top-list h5 {
   background: #959595;
@@ -2815,6 +2933,18 @@ span.vc_tta-title-text.display-none-accordion:after {
 }
 .gold-top-list h5 {
   background: #beab1f;
+}
+.gold-top-list {
+  margin-right: 0px;
+}
+.gold-top-list h5 {
+  background: #beab1f;
+}
+.platinum-top-list {
+  margin-right: 0px;
+}
+.platinum-top-list h5 {
+  background: #788694;
 }
 .no-padding-right, .right-image {
   padding-right: 0px;
@@ -2889,7 +3019,7 @@ span.vc_tta-title-text.display-none-accordion:after {
   padding-left: 3%;
 }
 .infi-content-wrapper .mk-text-block h2 {
-  color: #00baf2;
+  color: #fff;
 }
 .as-team-row, .company-row {
   margin-top: 30px;
