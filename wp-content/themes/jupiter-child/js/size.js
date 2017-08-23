@@ -43,6 +43,10 @@ $(document).ready(function () {
         $('.mobile-nav-tab-container').append(jQuery('.mk-tabs-tabs, .programs-tabs-link-column'));
         // Sticky Nav 
         $(".e-tab-container>nav>select").trigger("sticky_kit:detach");
+        
+        // Ambassador Levels to have award info for mobile
+//        $('.awards-one > p').appendTo('.ambassador-bronze');
+        $('.ambassador-bronze').append($('.awards-one > p'));
     }
     
     // Window Size 1140
