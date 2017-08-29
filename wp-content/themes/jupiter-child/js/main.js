@@ -1,10 +1,64 @@
 $(document).ready(function () {
     
+    // On Scroll hide ribbon
+    $(window).scroll(function() { 
+        if ($(document).scrollTop() > 50) {
+            $('.header-ribbon').slideUp(300);
+        } else {
+            $('.header-ribbon').slideDown(300);
+        }
+    });
+    
+    // OneWalk Dynamically Set Color of Header Title per Border-bottom color  
+    function slantedTitleColorSwitcher(elementID) {
+        if ($(elementID).hasClass('pink-header-pg-row')) {
+            $('.slanted-title h1').css('background', '#EC008A');
+            $('.slanted-left').css('border-bottom-color', '#EC008A');
+        } else if ($(elementID).hasClass('orange-header-pg-row')) {
+            $('.slanted-title h1').css('background', '#F47920');
+            $('.slanted-left').css('border-bottom-color', '#F47920');
+        } else if ($(elementID).hasClass('purple-header-pg-row')) {
+            $('.slanted-title h1').css('background', '#923a96');
+            $('.slanted-left').css('border-bottom-color', '#923a96');
+        } else if ($(elementID).hasClass('blue-header-pg-row')) {
+            $('.slanted-title h1').css('background', '#00BAF2');
+            $('.slanted-left').css('border-bottom-color', '#00BAF2');
+        }
+    };
+    
+    slantedTitleColorSwitcher('#programs-header');
+    slantedTitleColorSwitcher('#slanted-header');
+
+    // OneWalk Ambassador Columns to match height per resonsive
+//    $('.ambassador-levels-column').each(function() {
+//        var tallestBox = 0;
+//        $('.ambassador-bronze').each(function() {
+//           if($(this).height() > tallestBox) {
+//              tallestBox = $(this).height(); 
+//            } 
+//        });
+//        $('.lvl-description', this).height(tallestBox);
+//    });
+    
+    // OneWalk FAQ Page
+    $('.vc_tta-title-text').on('click', function() {
+        $(this).addClass('active-link');
+        $('.vc_tta-title-text').not(this).removeClass('active-link');
+    });
+    $('.vc_tta-icon').on('click', function() {
+        $(this).siblings('.vc_tta-title-text').addClass('active-link');
+        $('.vc_tta-icon').not(this).siblings('.vc_tta-title-text').removeClass('active-link');
+    });
+    $('.vc_tta-panel-title a').on('click', function() { 
+        $(this).children('.vc_tta-title-text').addClass('active-link');
+        $('.vc_tta-panel-title a').not(this).children('.vc_tta-title-text').removeClass('active-link');
+    });
+
+    // OneWalk Crews and Volunteer Page insert Accordion after Faq Title
+    $('.crews-faqs_accordion_row').insertAfter('.faq-title');
+    
     // Impact page move accordion into Tab
     $('.faqs_accordion_row').appendTo('#section-impact-tab-01');
-    
-    // OneWalk Header Append Purple Notification Ribbon
-    $('header').append('<div class="header-ribbon"><h3>ONE DAY. ALL CANCERS.  -  SEPTEMPER 9, 2017</h3></div>');
     
     // AS A TEAM NAV ACTIVE CLASS
     function firstActive(firstChild, className) {
@@ -23,14 +77,6 @@ $(document).ready(function () {
     changeActiveClass('.company-nav h4 a', 'active-green');
     changeActiveClass('.as-team-nav h4 a', 'active-orange');
     
-    
-    // Fifth Footer Widget
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').removeClass('mk-col-1-6');
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').addClass('mk-col-1-8');
-    // Sixth Footer Widget
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').removeClass('mk-col-1-6');
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').addClass('mk-col-1-5');
-    
     // Accordion to change into minus on click
     $('.vc_tta-panel-heading').click(function(){
        var collapsed=$(this).find('i').hasClass('fa-plus');
@@ -42,11 +88,10 @@ $(document).ready(function () {
             $('.vc_tta-icon',this).toggleClass('fa-plus fa-minus');
         }
     });
-    
-    var footerTopDiv = '<div class="first-footer-row"><div class="mk-col-1-4"><img src="/wp-content/themes/jupiter-child/img/princess_logo.svg"></div><div class="mk-col-1-4"><img src="/wp-content/themes/jupiter-child/img/campbell_logo.svg"></div><div class="mk-col-1-4 rexall-column"><p class="partners">Title Partner</p><img src="/wp-content/themes/jupiter-child/img/rexall_logo.svg"></div><div class="mk-col-1-4 cibc-column"><p class="partners">Founding Partner</p><img src="/wp-content/themes/jupiter-child/img/cibc_logo.svg"></div></div>';
+    // Partners Ribbon above Footer
+    var footerTopDiv = '<div class="footer-ribbon-container"><div class="first-footer-row"><div class="mk-col-1-4"><img src="/wp-content/themes/jupiter-child/img/princess_logo.svg"></div><div class="mk-col-1-4"><img src="/wp-content/themes/jupiter-child/img/campbell_logo.svg"></div><div class="mk-col-1-4 rexall-column"><p class="partners">Title Partner</p><img src="/wp-content/themes/jupiter-child/img/rexall_logo.svg"></div><div class="mk-col-1-4 cibc-column"><p class="partners">Founding Partner</p><img src="/wp-content/themes/jupiter-child/img/cibc_logo.svg"></div></div></div>';
     
     $('#mk-footer').prepend(footerTopDiv);
-    
     
 }); // END Document Ready
 
@@ -112,10 +157,5 @@ $(window).on("load",function(){
         "showChars" : 170,
         "moreText"	: "See More",
         "lessText"	: "Show Less",
-    });
-    $(".more-less-text-french>p").shorten({
-        "showChars" : 170,
-        "moreText"	: "Lire la suite",
-        "lessText"	: "Réduire",
     });
 });

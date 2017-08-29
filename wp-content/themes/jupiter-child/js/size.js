@@ -2,10 +2,10 @@ $(document).ready(function () {
     
     var windowSize = $(window).width();
     
-     // Window Size 782
+     // Window Size greater than 782
      if (windowSize > 782) {
          // Sticky Side Nav Area 
-        $("ul.mk-tabs-tabs, .e-tab-container>nav, .as-team-nav, .company-nav").stick_in_parent({offset_top: 200});
+        $("ul.mk-tabs-tabs, .e-tab-container>nav, .as-team-nav, .company-nav").stick_in_parent({offset_top: 150});
 
         $('ul.mk-tabs-tabs, .programs-tabs-link-column, .as-team-nav, .company-nav').on('sticky_kit:bottom', function(e) {
         $(this).parent().css('position', 'static');
@@ -45,13 +45,62 @@ $(document).ready(function () {
         $(".e-tab-container>nav>select").trigger("sticky_kit:detach");
         
         // Ambassador Levels to have award info for mobile
-//        $('.awards-one > p').appendTo('.ambassador-bronze');
-        $('.ambassador-bronze').append($('.awards-one > p'));
+        var awardsBronze = '.awards-one p, .awards-two p';
+        var awardsSilver = '.awards-one p, .awards-two p, .awards-three p';
+        var awardsGold = '.awards-one p, .awards-two p, .awards-three p, .awards-four p';
+        var awardsPlat = '.awards-one p, .awards-two p, .awards-three p, .awards-four p, .awards-five p';
+        
+         // Variable to hold all the levels
+        var allLevels = '.ambassador-bronze, .ambassador-silver, .ambassador-gold, .ambassador-platinum';
+        
+        $('<h4 class="amb-awards">Awards:</h4>').appendTo(allLevels);
+        $(awardsBronze).clone().appendTo('.ambassador-bronze');
+        $(awardsSilver).clone().appendTo('.ambassador-silver');        
+        $(awardsGold).clone().appendTo('.ambassador-gold');
+        $(awardsPlat).clone().appendTo('.ambassador-platinum');
+        
+        $('.awards-rec-title').parent('.levels-header').css('display', 'none');
+        
+        var allTitles = '.bronze-title, .silver-title, .gold-title, .platinum-title';
+        
+        $(allTitles).addClass('plusTitle');
+        
+        // Function to hide all of the levels on initial load for mobile
+        function hideLevels(levelsClass) {
+            $(levelsClass).children('p').css('display', 'none');
+        };
+        // Call on the hideLevels() function
+        hideLevels(allLevels);
+        
+        // Function to make levels an accordion on click
+        function levelsClick() {
+            $(allLevels).on('click', function() {
+                $(this).children('p, .amb-awards').slideToggle('normal'); 
+            });
+        };
+        // Call on levelsClick() function with allLevels variable included
+        levelsClick(this);
+        
+        // Function to make levels title turn from plus to minus and vice versa
+        function levelsTitleClick(elementClass) {
+            $(elementClass).on('click', function() {
+               $(this).toggleClass('minusTitle'); 
+            });
+        };
+        // Call function with the correct classes to avoid all from getting same class
+        levelsTitleClick('.bronze-title');
+        levelsTitleClick('.silver-title');
+        levelsTitleClick('.gold-title');
+        levelsTitleClick('.platinum-title');
+        
+        // OneStop page, shorten text
+        $('.icon-column-container:nth-child(2) h2').text('Support');
     }
     
     // Window Size 1140
     if (windowSize > 1140) {
-        // Area for future scripts if window size is greater than 1140px
+        // OneWalk Header Append Purple Notification Ribbon
+        $('header').append('<div class="header-ribbon"><h3>One Powerful Community. One Powerful Challenge.  September 7-8, 2018</h3></div>');
     } else {
         // Add Overlay to page body elements
         $('#mk-theme-container').prepend('<div class="mobile-overlay"></div>');

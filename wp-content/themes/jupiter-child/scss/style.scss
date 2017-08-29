@@ -184,20 +184,39 @@ $hover: darken($bg, 10%);
 
 .btn-outline-orange > button,
 .btn-with-link-orange > a {
-  @extend %btn-outline;
-  border: 2px solid $purple !important;
-  color: $purple !important;
-  transition: all 0.2s ease-in !important;
+    @extend %btn-outline;
+    border: 2px solid $orange !important;
+    color: $orange !important;
+    transition: all 0.2s ease-in !important;
     background-color: transparent !important;
     font-family: $h-font !important;
     padding: 15px 30px !important;
   &:hover {
-    background: $purple !important;
+    background: $orange !important;
     color: $white !important;
   }
   &:active {
     background: $white !important;
-    color: $purple !important;
+    color: $orange !important;
+  }
+}
+
+.btn-outline-pink > button,
+.btn-with-link-pink > a {
+    @extend %btn-outline;
+    border: 2px solid $pink !important;
+    color: $pink !important;
+    transition: all 0.2s ease-in !important;
+    background-color: transparent !important;
+    font-family: $h-font !important;
+    padding: 15px 30px !important;
+  &:hover {
+    background: $pink !important;
+    color: $white !important;
+  }
+  &:active {
+    background: $white !important;
+    color: $pink !important;
   }
 }
 
@@ -473,6 +492,9 @@ ul {
         line-height: 2.0;
     }
 }
+li {
+    color: $body-copy;
+}
 
 li.mk-tabs-tab {
     font-family: $h-font;
@@ -491,7 +513,6 @@ strong {
 button {
     font-family: $h-font;
 }
-
 .triangle-right {
 	width: 0;
 	height: 0;
@@ -499,9 +520,80 @@ button {
 	border-left: 35px solid $white;
 	border-bottom: 35px solid transparent;
 }
+.slanted-left {
+    width: 0;
+    height: 0;
+    border-bottom: 73px solid #0cb1aa;
+    border-left: 63px solid transparent;
+    position: absolute;
+    right: 723px;
+    top: -73px;
+    z-index: 100;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.slanted-title {
+    h1 {
+        position: absolute;
+        right: 0;
+        top: -73px;
+        z-index: 100;
+        color: white;
+        background: #0cb1aa;
+        padding: 5px 30px;
+        padding-right: 200px;
+        font-size: 3.5em !important;
+        @media screen and (max-width: 768px) {
+            text-align: center;
+            right: initial;
+            width: 100%;
+            padding: inherit;
+            top: -63px;
+        }
+        @media screen and (max-width: 400px) {
+            position: initial;
+            padding: 0 20px;
+            top: auto;
+            width: auto;
+        }
+    } 
+}
+
+.text-padding-10 {
+    padding: 10px 0px;
+}
+.text-orange {
+    color: $orange;
+}
+.border-bottom-orange {
+    border-bottom: 10px solid $orange;
+}
+.border-bottom-blue {
+    border-bottom: 10px solid $blue;
+}
+
+.border-bottom-teal {
+    border-bottom: 10px solid $teal;
+}
 
 // === ACTIVE STATE FOR LINKS === //
-
+.color-green {
+    color: $green;
+}
+.color-orange {
+    color: $orange;
+}
+.color-blue {
+    color: $blue;
+}
+.color-teal {
+    color: $teal;
+}
+.color-purple {
+    color: $purple;
+}
 .active-orange {
     color: $orange !important;
     border-bottom: 2px solid $orange;
@@ -597,7 +689,7 @@ button {
     border-bottom: 3px solid $orange;
 }
 
-/* ============== Active Menu List  ============== */
+/* ============== Active Main Menu List  ============== */
 
 //.menu-hover-style-2 .main-navigation-ul {
 //    li.current-page-ancestor{
@@ -611,7 +703,9 @@ button {
 //        }
 //    }
 //}
-
+.current-menu-parent {
+    border-bottom: 3px solid $purple;
+}
 .menu-hover-style-2 .main-navigation-ul {
     li.current-page-ancestor{
         a{
@@ -640,6 +734,10 @@ ul.main-navigation-ul {
 
 /* ============== Custom Classes ============== */
 
+.active-link {
+    color: $teal !important;
+}
+
 .text-green {
     color: $green;
     h1, h2, h3, h4, h5 {
@@ -666,9 +764,9 @@ ul.main-navigation-ul {
 
 .header-pg-row {
     z-index: 100 !important;
-    border-bottom: 15px solid $green;
+//    border-bottom: 10px solid $green;
     @media screen and (max-width: 768px) {
-        min-height: 400px !important;
+        min-height: 250px !important;
     }
     .page-section-content {
         height: 100%;
@@ -699,7 +797,7 @@ ul.main-navigation-ul {
     top: 370px;
     width: 100%;
     @media screen and (max-width: 768px) {
-        top: 280px;
+        top: 300px;
     }
     h1 {
         color: $white !important;
@@ -707,7 +805,7 @@ ul.main-navigation-ul {
         text-align: center;
         text-shadow: 2px 2px 10px #000;
         @media screen and (max-width: 768px) {
-            font-size: 13.5vw;
+            font-size: 3.8em;
         }
         @media screen and (max-width: 400px) {
             font-size: 16vw !important;
@@ -957,7 +1055,7 @@ ul#menu-main_menu {
             min-width: 160px; 
             position: absolute;
             top: 40px;
-            left: -5px;
+            left: -25px;
             li{
                 a {
                     text-align: center;
@@ -979,16 +1077,16 @@ ul#menu-main_menu {
  }
 
 .mk-main-navigation ul.sub-menu a.menu-item-link {
-    color: $body-copy;
+//    color: $body-copy;
     font-family: $h-font;
     &:hover {
-        color: $purple !important;
+        color: $body-copy  !important;
     }
 }
 
 .main-navigation-ul ul.sub-menu li.current-menu-item {
     a.menu-item-link{
-        color: $orange !important;
+        color: $purple !important;
     }
 }
 
@@ -996,6 +1094,7 @@ ul#menu-main_menu {
 
 .mk-responsive-nav .mk-nav-arrow{
     opacity: 1 !important;
+    width: 100%;
 }
 
 
@@ -1008,6 +1107,10 @@ ul#menu-main_menu {
             height: auto !important;
             line-height: normal !important;
             font-size: 16px;
+            @media screen and (max-width: 1270px) {
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+            }
         }
         &:first-child {
             .sub-menu {
@@ -1016,7 +1119,7 @@ ul#menu-main_menu {
         }
         &:nth-child(2) {
             .sub-menu {
-                left: -25px;
+                left: -30px;
             }
         }
         &:nth-child(-n+3){
@@ -1034,6 +1137,9 @@ ul#menu-main_menu {
                 }
             }
         }
+        &:nth-child(3) {
+            margin-right: 70px;
+        }
         &:nth-child(n+4){
             @extend .btn-outline-purple;
             padding: 5px 0px;
@@ -1044,6 +1150,9 @@ ul#menu-main_menu {
             transition: all 0.3s ease-in;
             margin-top: 0px !important;
             border: 2px solid $purple;
+            @media screen and (max-width: 1270px) {
+                margin-right: 15px;
+            }
             @media screen and (max-width: 1410px){
                 width: 110px;
                 a {
@@ -1072,10 +1181,10 @@ ul#menu-main_menu {
                 padding: 0px 20px;
             }
             &:hover {
-                background: none !important;
+                background: #39a196 !important;
                 border: 2px solid $teal;
                 a {
-                    color: $teal;
+                    color: $white;
                 }
             }
         }
@@ -1115,55 +1224,59 @@ ul#menu-main_menu {
 }
 
 /* ============== Footer Menu ============== */
-
-.first-footer-row {
-    background: #fff !important;
-    width: 100%;
-    min-height: 220px;
-    height: auto;
-    position: relative;
+.footer-ribbon-container {
     margin-top: -20px;
     border-top: 5px solid $green;
-    .rexall-column {
-        img {
-            max-width: 200px !important;
-            position: relative;
-            display: block;
-            margin: 0 auto;
+    background: #fff !important;
+    .first-footer-row {
+        max-width: 1140px;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        min-height: 150px;
+        height: auto;
+        position: relative;
+        .rexall-column {
+            img {
+                max-width: 120px !important;
+                position: relative;
+                display: block;
+                margin: 0 auto;
+            }
         }
-    }
-    .cibc-column {
+        .cibc-column {
+            img {
+                position: relative;
+                max-width: 60px !important;
+                display: block;
+                margin: 0 auto;
+            }
+            @media screen and (max-width: 768px) {
+                padding-bottom: 40px !important;
+            }
+        }
         img {
-            position: relative;
-            max-width: 120px !important;
-            display: block;
-            margin: 0 auto;
+            max-width: 230px !important;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+        }
+        p {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            margin-top: 25px;
+            font-size: 16px !important;
         }
         @media screen and (max-width: 768px) {
-            padding-bottom: 40px !important;
-        }
-    }
-    img {
-        max-width: 300px !important;
-        position: absolute;
-        top: 50%;
-        margin-top: -45px;
-    }
-    p {
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        font-size: 20px !important;
-    }
-    @media screen and (max-width: 768px) {
-        div {
-            img {
-                position: relative !important;
-                display: block !important;
-                margin: 30px auto !important;
-                &:first-child {
-                    margin-bottom: 70px !important;
+            div {
+                img {
+                    position: relative !important;
+                    display: block !important;
+                    margin: 30px auto !important;
+                    &:first-child {
+                        margin-bottom: 70px !important;
+                    }
                 }
             }
         }
@@ -1171,12 +1284,14 @@ ul#menu-main_menu {
 }
 
 .footer-fifth {		
-    margin-top: 15px;		
+    margin-top: 15px;
+    margin-left: 20px;
     @media screen and (max-width: 768px) {		
         text-align: center;
         display: block;
         margin: 0 auto;
         position: relative;
+        margin-left: auto;
     }		
     a {		
         text-transform: uppercase;		
@@ -1202,8 +1317,8 @@ ul#menu-main_menu {
 }
 
 .widget_social_networks a.large svg {
-    height: 45px !important;
-    width: 45px !important;
+    height: 25px !important;
+    width: 25px !important;
 }
 
 #mk-footer{
@@ -1256,7 +1371,7 @@ ul#menu-main_menu {
         div {
             #menu-about_footer_menu,
             #menu-impact_footer_menu,
-            #menu-rider-hub_footer_menu{
+            #menu-onestop_footer_menu{
                 li{
                     &::before {
                         display: none;
@@ -1264,12 +1379,13 @@ ul#menu-main_menu {
                         color: rgba(255,255,255,0.7);
                         @media screen and (max-width: 768px){
                             display: block;
-                            right: 10%;
+                            left: 0%;
+                            text-align: right;
+                            padding-right: 70px;
                             font-size: 30px;
-                            width: 50px;
+                            width: 100%;
                             height: 100%;
-                            line-height: 1.8;
-                            
+                            line-height: 1.5;
                         }
                     }
                     a {
@@ -1292,12 +1408,14 @@ ul#menu-main_menu {
                             display: none;
                         }
                         li {
+                            border-bottom: none !important;
                             a {
                                 color: $white;
                                 font-family: $p-font;
-                                font-size: 16px;
+                                font-size: 14px;
                                 text-transform: inherit;
                                 text-align: left;
+                                height: 22px;
                                 @media screen and (max-width: 768px) {
                                     text-align: center;
                                 }
@@ -1309,15 +1427,15 @@ ul#menu-main_menu {
                     }
                 }
             }
-            #menu-about_footer_menu {
-                li {
-                    a {
-                        display: block;
-                        margin: 0 auto;
-                        width: 65px;
-                    }
-                }
-            }
+//            #menu-about_footer_menu {
+//                li {
+//                    a {
+//                        display: block;
+//                        margin: 0 auto;
+//                        width: 65px;
+//                    }
+//                }
+//            }
         }
         ul {
             li.current_page_item{ 
@@ -1534,10 +1652,10 @@ div.p-block {
 
 .home-gray-section {
     @extend .bw-page-section;
-    background: $gray;
+    background: $gray-light;
     padding: 6% 0;
     h2, p {
-        color: #000;
+        color: $body-copy;
     }
     h2 {
         text-align: center;
@@ -1839,12 +1957,6 @@ span.vc_tta-title-text.display-none-accordion{
     top: 140px;
 }
 
-#about-cancer-header {
-    @media screen and (max-width: 768px) {
-        min-height: 300px !important;
-    }
-}
-
 // ABOUT PAGE STYLES 
 
 %about-text-container {
@@ -1960,14 +2072,56 @@ display: inline-block;
                     p {
                         margin-bottom: 0px;
                     }
+                    h3 {
+                        color: $orange;
+                    }
                 }
             }
         }
+        
     }
     .small-text{
         p {
             font-size: 12px;
         }
+    }
+    .refer-title {
+        background: $orange;
+        color: $white;
+        text-align: center;
+        margin-bottom: 0px;
+        padding: 15px 0px;
+    }
+    .triangle-container{
+        margin-bottom: 0px;
+        .wpb_wrapper {
+            position: relative;
+        }
+    }
+    .white-triangle {
+        top: 42px;
+        left: 43%;
+        /* right: 0; */
+        transform: rotate(90deg);
+        border-left-color: #f5f5f5;
+        position: absolute;
+    }
+}
+
+.plusTitle {
+    &:after {
+        content: "\f067";
+        position: absolute;
+        right: 10px;
+        font-family: $a-font;
+    }
+}
+.minusTitle {
+    &:after {
+        content: "\f068";
+        position: absolute;
+        right: 10px;
+        font-family: $a-font;
     }
 }
 .ambassador-levels-column {
@@ -2007,9 +2161,14 @@ display: inline-block;
     .ambassador-gold,
     .ambassador-platinum {
         min-height: 266px;
+        @media screen and (max-width: 768px) {
+            min-height: auto;
+            cursor: pointer;
+        }
         h4 {
             padding: 15px 5px;
             color: $white;
+            text-align: center;
         }
         p {
             font-size: 15px !important;
@@ -2018,6 +2177,15 @@ display: inline-block;
             strong {
                 font-size: 24px;
             }
+            &:nth-child(n+7) {
+                padding: 0 20px;
+            }
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+        .amb-awards {
+            display: none;
         }
     }
     .ambassador-bronze {
@@ -2115,6 +2283,12 @@ display: inline-block;
     }
 }
 
+#rewards-row {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
 .levels-header {
     background: $purple;
     padding: 10px 0;
@@ -2134,6 +2308,9 @@ display: inline-block;
     h1 {
         text-align: center;
         color: $orange;
+        @media screen and (max-width: 768px) {
+            font-size: 28px;
+        }
     }
     input {
         display: block;
@@ -2143,6 +2320,9 @@ display: inline-block;
         margin-top: 25px;
         &:focus {
             border: 1px solid $orange;
+        }
+        @media screen and (max-width: 768px) {
+            width: 100%;
         }
     }
 }
@@ -2222,7 +2402,10 @@ display: inline-block;
                 ul.sub-menu {
                     border-top: none;
                     background: $gray-light;
+                    border: none;
                     li {
+                        background: none !important;
+                        border: none !important;
                         &:first-child a {
                             padding-top: 25px;
                         }
@@ -2232,13 +2415,14 @@ display: inline-block;
                         a {
                             font-family: $p-font;
                             font-size: 16px;
-                            margin-left: 20px;
+                            margin-left: 20px !important;
                             padding: 20px 5px;
                             transition: 0.3s all ease-in;
-                            border: none;
+                            border: none !important;
                             color: $body-copy !important;
+                            text-align: left;
                             &:hover {
-                                color: $blue !important;
+                                color: $purple !important;
                                 background: none;
                                 font-weight: 700;
                             }
@@ -2246,9 +2430,14 @@ display: inline-block;
                     }
                     li.current-menu-item {
                         a {
-                            color: $orange !important;
+                            color: $purple !important;
                         }
                     }
+                }
+            }
+            li.current-menu-ancestor.current-menu-parent {
+                a {
+                    color: $purple !important;
                 }
             }
             li {
@@ -2261,7 +2450,7 @@ display: inline-block;
                         &:before {
                             font-family: FontAwesome;
                             content: "\f067";
-                            color: $blue;;
+                            color: $purple;
                             float: right;
                             font-size: 18px;
                             position: relative;
@@ -2282,25 +2471,39 @@ display: inline-block;
                         text-align: center;
                     }
                 }
-                &:nth-child(4) {
-                    background: $orange;
-                    a {
-                        color: $white !important;
-                    }
-                }
-                &:nth-child(n+5) {
-                    border-bottom: 1px solid $blue;
+                &:nth-child(n+4) {
+                    border-bottom: 1px solid $purple;
                     transition: all 0.2s ease-in;
+                    a {
+                        color: $purple !important;
+                    }
                     &:hover {
-                        background: $blue;
+                        background: $purple;
                         a {
                             color: $white !important;
                         }
                     }
                 }
+                &:nth-last-child(4) {
+                    border-top: 1px solid $purple;
+                }
+                &:nth-last-child(2) {
+                    border: none;
+                }
+                &:last-child {
+                    background: $teal;
+                    border: none;
+                    a {
+                        color: $white !important;
+                    }
+                    &:hover,
+                    &:active {
+                        background: #39a197;
+                    }
+                }
                 a {
                     font-size: 20px;
-                    color: $blue !important;
+                    color: $body-copy !important;
                     font-family: $h-font;
                     &:hover {
                         background: none;
@@ -2573,6 +2776,7 @@ display: inline-block;
     margin-bottom: 20px;
     img {
         margin-bottom: 15px;
+        max-height: 100px;
         @media screen and (max-width: 768px) {
             max-width: 80%;
         }
@@ -2687,6 +2891,8 @@ display: inline-block;
 }
 
 // === DOLLARS AT WORK PAGE STYLING === //
+
+
 .blue-page-section {
     background: $blue;
     h2 {
@@ -2825,10 +3031,10 @@ display: inline-block;
     background-size: cover;
 }
 
-$color-1: #00609c!default;
-$color-2: #FFC627 !default;
-$color-3: #e27c00 !default;
-$color-4: #4e9d2d !default;
+$color-1: $teal !default;
+$color-2: $purple !default;
+$color-3: $teal  !default;
+$color-4: $purple !default;
 
 // Timing
 $container-rotate-timing:           1600ms !default;
@@ -3034,11 +3240,19 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 }
 
 
-// ===== FUNDRAISING PAGE STYLING ===== //
+// ===== OneWalk (Updated) Fundraising Page ===== //
 
 .fundraising-tabs {
     .et-tabs {
         nav {
+            max-width: 24% !important;
+            border-right: 1px solid $gray;
+            margin: 20px 0px;
+            @media screen and (max-width: 768px) {
+                max-width: inherit !important;
+                border-right: none;
+                margin: auto;
+            }
             ul {
                 padding: 15px 0px;
             }
@@ -3091,6 +3305,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
         }
         h2 {
             padding-top: 5px;
+            color: $pink;
             @media screen and (max-width: 768px) {
                 font-size: 1.93em;
             }
@@ -3098,9 +3313,48 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
 }
 
-.donation-btn {
-    @extend .btn-with-link-blue;
-    display: inline-block;
+.secure-donation-column {
+    .white-triangle {
+        right: auto;
+        left: 50%;
+        top: auto;
+        transform: rotate(90deg);
+        bottom: -52px;
+         @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+.fundraising-toolkit-title {
+    h1 {
+        color: $white;
+        margin-bottom: 0px;
+    }
+}
+.ow-expand-column {
+    @extend .ow-support-column;
+    background: $white !important;
+    h1 {
+        color: $pink !important;
+    }
+    p {
+        color: $body-copy !important;
+    }
+    .white-triangle {
+        border-left-color: $white !important;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 30px !important;
+        h1 {
+            text-align: center;
+        }
+    }
+    .mk-text-block {
+        padding: 0 25%;
+        @media screen and (max-width: 768px) {
+            padding: inherit;
+        }
+    }
 }
 
 // ===== PARTNERS PAGE STYLING ===== //
@@ -3211,22 +3465,6 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
       } 
     }
 }
-// ===== HEADER STYLING ===== //
-.ride-as-team-header,
-.rider-stories-header,
-.media-header,
-.impact-header,
-.about-header,
-.partners-header,
-#dollars-at-work-header,
-#training-header,
-#programs-header,
-#workplace-giving-header,
-#fundraising-header,
-#outfitters-header,
-#support-header{
-    @extend #about-cancer-header;
-}
 
 // ET TABS STYLING
 
@@ -3270,6 +3508,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
                     span {
                         color: $blue !important;
                         border-bottom: 2px solid $blue;
+                        line-height: 1.3;
                     }
                 }
             } 
@@ -3600,31 +3839,34 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 
 .green-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $green;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-bottom-color: $green;
 }
 .orange-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $orange;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-bottom-color: $orange;
 }
 .homepage-orange-header-pg-row {
     @extend .header-pg-row;		
-    border-bottom: 15px solid $orange;
+    border-bottom-color: $orange;
     @media screen and (max-width: 768px) {
         min-height: auto !important;
     }
 }
 .blue-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $blue;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-bottom-color: $blue;
+}
+.teal-header-pg-row {		
+    @extend .header-pg-row;		
+    border-bottom-color: $teal;
+}
+.pink-header-pg-row {		
+    @extend .header-pg-row;		
+    border-bottom-color: $pink;
+}
+.purple-header-pg-row {		
+    @extend .header-pg-row;		
+    border-bottom-color: $purple;
 }
 
 // =============== OD18 IMPACT Page =============== //
@@ -3673,13 +3915,13 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
         }
     }
 }
-.infi-content-wrapper {
-    .mk-text-block {
-        h2 {
-            color: $white;
-        }   
-    }
-}
+//.infi-content-wrapper {
+//    .mk-text-block {
+//        h2 {
+//            color: $white;
+//        }   
+//    }
+//}
 // =============== OD18 AS A TEAM Page =============== //
 .as-team-row {
     @extend .programs-front-row;
@@ -3814,11 +4056,12 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .header-ribbon {
     position: fixed;
     width: 100%;
-    background-color: rgba(143, 46, 149, 0.7);
+    background-color: rgba(143, 46, 149, 0.85);
     h3 {
         padding-top: 10px;
         color: $white;
         text-align: center !important;
+        font-size: 22px;
     }
     @media screen and (max-width: 768px) {
         display: none;
@@ -3902,11 +4145,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
         margin-left: 45px;
     }
     .white-triangle {
-        display: none;
-        @media screen and (max-width: 768px) {
-            display: block;
-            border-left-color: $teal;
-        }
+        border-left-color: $teal;
     }
 }
 .mini-text-container {
@@ -3957,6 +4196,212 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
 }
 
+// =============== OneWalk Dollars at Work Page =============== // 
+#section-15-yrs-walk {
+    margin-left: 50px !important;
+    margin-left: -20px;
+    @media screen and (max-width: 768px) {
+        margin-left: auto !important;
+        margin-top: 45px;
+    }
+}
+.time-container {
+    min-height: 800px;
+    height: 100%;
+    border-left: 5px solid #e3e3e3;
+    .row {
+        margin-left: -75px;
+        display: inline-block;
+        margin-bottom: 65px;
+        .vc_col-sm-2 {
+            background: $white;
+            p {
+                margin: 20px 0px;
+            }
+        }
+        .vc_col-sm-10 {
+            padding: 0 40px;
+            p {
+                padding-top: 40px;
+            }
+            a {
+                color: $purple;
+            }
+        }
+        &:last-child {
+            margin-bottom: -8px;
+        }
+    }
+    .year-circle {
+        font-size: 26px;
+        color: $purple;
+        border: 5px solid $purple;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        line-height: 3.7;
+        text-align: center;
+        font-weight: 700;
+        font-family: $h-font;
+    }
+    @media screen and (max-width: 768px) {
+        border-left: none;
+        .row {
+            margin-left: auto;
+        }
+        .year-circle {
+            margin: 0 auto !important;
+        }
+        .vc_col-sm-2 {
+            z-index: 99;
+            width: 140px !important;
+            margin: 0 auto;
+            background: #fff;
+        }
+        .vc_col-sm-10 {
+            padding: inherit !important;
+            p {
+                padding-top: 100px !important;
+                margin-top: -60px;
+                border-top: 5px solid #e3e3e3;
+            }
+        }
+    }
+}
+
+.ow-daw-dr-tak {
+    h1 {
+        color: $purple;
+    }
+    img {
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.daw-tabs {
+    h3, a {
+        color: $purple;
+    }
+}
+
+// =============== OneWalk OneStop Page =============== // 
+.morelink {
+    color: #6b767d;
+}
+.onestop-green-columns {
+    .desktop-image {
+        margin-bottom: 0px;
+        img {
+            width: 350px;
+        }
+    }
+    .onestop-green-txt-container {
+        padding: 20px;
+        h3, p {
+            color: $white;
+        }
+        h3 {
+            font-family: "National Black", Helvetica, sans-serif;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    
+}
+.rider-hub-events h2 {
+    color: #0cb1aa;
+    font-family: "National Black", Helvetica, sans-serif;
+}
+// =============== OneWalk How We Support You Page =============== // 
+
+.ow-support-column {
+    padding:  120px 4% 80px;
+    background: $purple;
+    color: $white;
+    h1, p {
+        color: $white;
+    }
+    .white-triangle {
+        border-left-color: $purple;
+    }
+    &:nth-child(2) {
+        .white-triangle {
+            left: -35px;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.circles-numbered-column {
+    counter-reset: circles-paragraph;
+    margin-left: 40px;
+//    @media screen and (max-width: 768px) {
+//        margin-left: 40px;
+//    }
+    .paragraph-circles-numbered{
+        counter-increment: circles-paragraph;
+        &:before {
+            content: counter(circles-paragraph) " ";
+            margin-right: 20px;
+            color: #923a96;
+            border: 3px solid #923a96;
+            border-radius: 50%;
+            padding: 7px 13px;
+            position: absolute;
+            left: -45px;
+            top: -5p;
+            vertical-align: top;
+            margin-top: 0px;
+            text-align: center;
+            font-size: 26px;
+            /* width: 50px; */
+            /* height: 50px; */
+            /* line-height: 1.8; */
+            /* padding-bottom: 5px; */
+            font-family: "National Bold";
+        }
+        h3 {}
+        &:nth-child(3) {
+            &:before {
+                line-height: 0;
+                padding: 16px 13px 20px;
+            }
+        }
+    }
+}
+
+// =============== OneWalk Crew and Volunteers Page =============== // 
+.crews-faqs-accordion {
+    @extend .faqs-accordion;
+    .vc_tta-panel-heading{
+        h4 {
+            a {
+                &:before {
+                    display: none;
+                }
+                span {
+                    color: $body-copy;
+                }
+                i {
+                    color: #5bb2a9;
+                }
+            } 
+        } 
+    } 
+}
+.crews-faqs_accordion_row {
+    .vc_tta-panel-body {
+        div {
+            p {
+                padding-left: 20px !important;
+            }
+        }
+    }
+}
+
 // =============== OneWalk Partners Page =============== // 
 
 .partners-txt {
@@ -3972,20 +4417,29 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
     .mini-text-container {
         margin: 80px auto !important;
+        @media screen and (max-width: 768px) {
+            margin: 0px auto !important;
+        }
     }
     .white-triangle {
-        border-left-color: $purple;
+        border-left-color: $teal;
     }
     &:nth-child(2){
         .white-triangle {
             transform: rotate(180deg);
             left: -35px;
+            border-left-color: $purple;
+            @media screen and (max-width: 768px) {
+                left: 50% !important;
+                transform: rotate(270deg) !important;
+                top: -17px;
+            }
         }
     }
 }
 .partner-white-column {
     h1 {
-        color: $purple;
+        color: $teal;
     }
     .mini-text-container {
         margin: 80px auto !important;
