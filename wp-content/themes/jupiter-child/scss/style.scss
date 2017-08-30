@@ -1174,7 +1174,7 @@ ul#menu-main_menu {
             }
         }
         }
-        &:nth-last-child(1){
+        &:nth-last-child(4){
             @extend .btn-regular-teal;
             a{
                 color: $white;
@@ -2484,13 +2484,13 @@ display: inline-block;
                         }
                     }
                 }
-                &:nth-last-child(4) {
+                &:last-child {
                     border-top: 1px solid $purple;
                 }
                 &:nth-last-child(2) {
                     border: none;
                 }
-                &:last-child {
+                &:nth-last-child(4) {
                     background: $teal;
                     border: none;
                     a {
