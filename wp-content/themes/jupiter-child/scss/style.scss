@@ -2099,7 +2099,7 @@ display: inline-block;
         }
     }
     .white-triangle {
-        top: 42px;
+        top: 71px;
         left: 43%;
         /* right: 0; */
         transform: rotate(90deg);
@@ -4459,5 +4459,15 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     @media screen and (max-width: 768px) {
         display: inline-block;
         width: 50% !important;
+    }
+}
+
+// =============== FIREFOX AREA =============== //
+
+@-moz-document url-prefix() { 
+    .slanted-left {
+        right: 534px;
+        border-bottom: 74px solid #0cb1aa;
+        border-left: 64px solid transparent;
     }
 }
