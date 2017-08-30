@@ -22,6 +22,7 @@ $gray-light: #F4F4F4;
 $gray-dark: #5D5D5D;
 $gray-link-hover: #B7B7B7;
 $green: #B4D333;
+$indigo: #332A7E;
 $orange: #F47920;
 $pink: #EC008A;
 $platinum: #788694;
@@ -1322,7 +1323,7 @@ ul#menu-main_menu {
 }
 
 #mk-footer{
-    background-color: $purple !important;
+    background-color: $indigo !important;
     .footer-wrapper{
 //        max-width: 1250px;
         @media screen and (max-width: 1096px) {
@@ -1440,7 +1441,7 @@ ul#menu-main_menu {
         ul {
             li.current_page_item{ 
                 a{
-                    color: $green !important;
+                    color: $blue !important;
                     background: none;
                 }
             }
@@ -3868,6 +3869,11 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     @extend .header-pg-row;		
     border-bottom-color: $purple;
 }
+.indigo-header-pg-row {		
+    @extend .header-pg-row;		
+    border-bottom-color: $indigo;
+}
+
 
 // =============== OD18 IMPACT Page =============== //
 .plus-accordion {
