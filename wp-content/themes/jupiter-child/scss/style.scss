@@ -164,6 +164,25 @@ $hover: darken($bg, 10%);
   }
 }
 
+.btn-outline-indigo > button,
+.btn-with-link-indigo > a {
+  @extend %btn-outline;
+  border: 2px solid $indigo !important;
+  color: $indigo !important;
+  transition: all 0.2s ease-in !important;
+    background-color: transparent !important;
+    font-family: $h-font !important;
+    padding: 15px 30px !important;
+  &:hover {
+    background: $indigo !important;
+    color: $white !important;
+  }
+  &:active {
+    background: $white !important;
+    color: $indigo !important;
+  }
+}
+
 .btn-outline-purple > button,
 .btn-with-link-purple > a {
   @extend %btn-outline;
@@ -309,8 +328,41 @@ $hover: darken($bg, 10%);
     color: $purple !important;
   }
 }
+.btn-with-link-trans-blue > a {
+    @extend %btn-outline;
+    border: 2px solid $white !important;
+    color: $white !important;
+    transition: all 0.2s ease-in;
+    background-color: transparent !important;
+    font-family: $h-font !important;
+  &:hover {
+    background: $white !important;
+    color: $blue !important;
+  }
+  &:active {
+    background: #0293bf !important;
+    color: $blue !important;
+  }
+}
+.btn-with-link-trans-teal > a {
+    @extend %btn-outline;
+    border: 2px solid $white !important;
+    color: $white !important;
+    transition: all 0.2s ease-in;
+    background-color: transparent !important;
+    font-family: $h-font !important;
+  &:hover {
+    background: $white !important;
+    color: $teal !important;
+  }
+  &:active {
+    background: #098a84 !important;
+    color: $teal !important;
+  }
+}
 
-.btn-outline-white-trans > button {
+.btn-outline-white-trans > button,
+.btn-outline-white-trans > a {
   @extend %btn-outline;
     padding: 10px 25px;
     text-transform: uppercase;
@@ -558,6 +610,7 @@ button {
             padding: 0 20px;
             top: auto;
             width: auto;
+            font-size: 8vw !important;
         }
     } 
 }
@@ -705,7 +758,7 @@ button {
 //    }
 //}
 .current-menu-parent {
-    border-bottom: 3px solid $purple;
+    border-bottom: 3px solid $indigo;
 }
 .menu-hover-style-2 .main-navigation-ul {
     li.current-page-ancestor{
@@ -1087,7 +1140,7 @@ ul#menu-main_menu {
 
 .main-navigation-ul ul.sub-menu li.current-menu-item {
     a.menu-item-link{
-        color: $purple !important;
+        color: $indigo !important;
     }
 }
 
@@ -1127,7 +1180,7 @@ ul#menu-main_menu {
             margin-right: 10px;
             transition: all 0.2s ease-in;
             &:hover {
-                border-bottom: 3px solid $purple;
+                border-bottom: 3px solid $indigo;
             }
             a {
                 font-size: 18px;
@@ -1142,7 +1195,7 @@ ul#menu-main_menu {
             margin-right: 70px;
         }
         &:nth-child(n+4){
-            @extend .btn-outline-purple;
+            @extend .btn-outline-indigo;
             padding: 5px 0px;
             width: 140px;
             top: 35px;
@@ -1150,7 +1203,7 @@ ul#menu-main_menu {
             margin-right: 30px;
             transition: all 0.3s ease-in;
             margin-top: 0px !important;
-            border: 2px solid $purple;
+            border: 2px solid $indigo;
             @media screen and (max-width: 1270px) {
                 margin-right: 15px;
             }
@@ -1163,13 +1216,13 @@ ul#menu-main_menu {
             a{
                 height: 100%;
                 line-height: 35px !important;
-                color: $purple;
+                color: $indigo;
                 &:hover {
                     color: $white;
                 }
             }
         &:hover {
-            background: $purple;
+            background: $indigo;
             a {
                 color: $white;
             }
@@ -1218,7 +1271,7 @@ ul#menu-main_menu {
             svg {
                 width: 30px !important;
                 height: 30px !important;
-                fill: $purple;
+                fill: $indigo;
             }
         }
     }
@@ -1227,7 +1280,7 @@ ul#menu-main_menu {
 /* ============== Footer Menu ============== */
 .footer-ribbon-container {
     margin-top: -20px;
-    border-top: 5px solid $green;
+    border-top: 5px solid $indigo;
     background: #fff !important;
     .first-footer-row {
         max-width: 1140px;
@@ -2423,7 +2476,7 @@ display: inline-block;
                             color: $body-copy !important;
                             text-align: left;
                             &:hover {
-                                color: $purple !important;
+                                color: $indigo !important;
                                 background: none;
                                 font-weight: 700;
                             }
@@ -2431,14 +2484,14 @@ display: inline-block;
                     }
                     li.current-menu-item {
                         a {
-                            color: $purple !important;
+                            color: $indigo !important;
                         }
                     }
                 }
             }
             li.current-menu-ancestor.current-menu-parent {
                 a {
-                    color: $purple !important;
+                    color: $indigo !important;
                 }
             }
             li {
@@ -2451,7 +2504,7 @@ display: inline-block;
                         &:before {
                             font-family: FontAwesome;
                             content: "\f067";
-                            color: $purple;
+                            color: $indigo;
                             float: right;
                             font-size: 18px;
                             position: relative;
@@ -2476,17 +2529,17 @@ display: inline-block;
                     border-bottom: 1px solid $purple;
                     transition: all 0.2s ease-in;
                     a {
-                        color: $purple !important;
+                        color: $indigo !important;
                     }
                     &:hover {
-                        background: $purple;
+                        background: $indigo;
                         a {
                             color: $white !important;
                         }
                     }
                 }
                 &:last-child {
-                    border-top: 1px solid $purple;
+                    border-top: 1px solid $indigo;
                 }
                 &:nth-last-child(2) {
                     border: none;
@@ -2875,7 +2928,7 @@ display: inline-block;
     }
 }
 .mk-fullscreen-search-overlay {
-    background-color: rgba(143, 46, 149, .94);
+    background-color: rgba(51, 42, 126, .94);
     .mk-fullscreen-search-wrapper {
         p {
             font-size: 26px;
@@ -3033,9 +3086,9 @@ display: inline-block;
 }
 
 $color-1: $teal !default;
-$color-2: $purple !default;
+$color-2: $indigo !default;
 $color-3: $teal  !default;
-$color-4: $purple !default;
+$color-4: $indigo !default;
 
 // Timing
 $container-rotate-timing:           1600ms !default;
@@ -4062,7 +4115,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .header-ribbon {
     position: fixed;
     width: 100%;
-    background-color: rgba(143, 46, 149, 0.85);
+    background-color: rgba(51, 42, 126, 0.85);
     h3 {
         padding-top: 10px;
         color: $white;
@@ -4128,7 +4181,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 }
 .home-three-columns {
     h3 {
-        color: $purple;
+        color: $teal;
     }
 }
 .one-home-teal-column {
@@ -4176,7 +4229,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 // =============== OneWalk Walk Page =============== //
 
 .ow-walk-column {
-    border-bottom: 5px solid $teal;
+    border-bottom: 5px solid $blue;
     .mini-text-container {
         max-width: 615px;
         margin: 0 auto !important;
@@ -4193,12 +4246,12 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .walk-faq-row {
     background: #F5F5F5;
     h1 {
-        color: $teal;
+        color: $blue;
     }
 }
 .walk-three-columns-row {
     h2 {
-        color: $teal;
+        color: $blue;
     }
 }
 
@@ -4231,7 +4284,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
                 padding-top: 40px;
             }
             a {
-                color: $purple;
+                color: $indigo;
             }
         }
         &:last-child {
@@ -4240,8 +4293,8 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
     .year-circle {
         font-size: 26px;
-        color: $purple;
-        border: 5px solid $purple;
+        color: $indigo;
+        border: 5px solid $indigo;
         border-radius: 50%;
         width: 100px;
         height: 100px;
@@ -4277,7 +4330,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 
 .ow-daw-dr-tak {
     h1 {
-        color: $purple;
+        color: $indigo;
     }
     img {
         @media screen and (max-width: 768px) {
@@ -4288,7 +4341,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 }
 .daw-tabs {
     h3, a {
-        color: $purple;
+        color: $indigo;
     }
 }
 
@@ -4325,13 +4378,13 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 
 .ow-support-column {
     padding:  120px 4% 80px;
-    background: $purple;
+    background: $indigo;
     color: $white;
     h1, p {
         color: $white;
     }
     .white-triangle {
-        border-left-color: $purple;
+        border-left-color: $indigo;
     }
     &:nth-child(2) {
         .white-triangle {

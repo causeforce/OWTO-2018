@@ -23,6 +23,9 @@ $(document).ready(function () {
         } else if ($(elementID).hasClass('blue-header-pg-row')) {
             $('.slanted-title h1').css('background', '#00BAF2');
             $('.slanted-left').css('border-bottom-color', '#00BAF2');
+        } else if ($(elementID).hasClass('indigo-header-pg-row')) {
+            $('.slanted-title h1').css('background', '#332A7E');
+            $('.slanted-left').css('border-bottom-color', '#332A7E');
         }
     };
     
