@@ -576,12 +576,13 @@ button {
 .slanted-left {
     width: 0;
     height: 0;
-    border-bottom: 73px solid #0cb1aa;
-    border-left: 63px solid transparent;
     position: absolute;
-    right: 723px;
+    right: 562px;
     top: -73px;
+    border-style: solid;
     z-index: 100;
+    border-width: 0 0 73px 73px;
+    border-color: transparent transparent #0cb1aa transparent;
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -593,7 +594,8 @@ button {
         right: 0;
         top: -73px;
         z-index: 100;
-        color: white;
+        color: #fff;
+        height: 63px;
         background: #0cb1aa;
         padding: 5px 30px;
         padding-right: 200px;
@@ -610,6 +612,7 @@ button {
             padding: 0 20px;
             top: auto;
             width: auto;
+            height: auto;
             font-size: 8vw !important;
         }
     } 
@@ -1287,10 +1290,11 @@ ul#menu-main_menu {
         display: block;
         margin: 0 auto;
         width: 100%;
-        min-height: 150px;
+        min-height: 200px;
         height: auto;
         position: relative;
         .rexall-column {
+            margin-top: 40px;
             img {
                 max-width: 120px !important;
                 position: relative;
@@ -1299,6 +1303,7 @@ ul#menu-main_menu {
             }
         }
         .cibc-column {
+            margin-top: 40px;
             img {
                 position: relative;
                 max-width: 60px !important;
@@ -1313,14 +1318,14 @@ ul#menu-main_menu {
             max-width: 230px !important;
             position: absolute;
             top: 50%;
-            margin-top: -25px;
+            margin-top: -10px;
         }
         p {
             text-align: center;
             text-transform: uppercase;
-            margin-bottom: 5px;
-            margin-top: 25px;
-            font-size: 16px !important;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 14px !important;
         }
         @media screen and (max-width: 768px) {
             div {
@@ -1355,9 +1360,9 @@ ul#menu-main_menu {
     }		
 }		
 .footer-sixth {		
-    color: $white !important;		
-    a,		
-    p {		
+    color: $white !important;	
+    margin-top: 15px;
+    a, p {		
         color: $white !important;		
     }		
     @media screen and (max-width: 768px) {		
@@ -1503,6 +1508,7 @@ ul#menu-main_menu {
 }
 
 .footer-column {
+    margin-top: 15px;
     .footer-text-gold {
         color: $white !important;
         font-family: $h-font;
@@ -3083,6 +3089,59 @@ display: inline-block;
     z-index: 1000;
     background: $white;
     background-size: cover;
+    svg {
+        max-width: 120px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -75px;
+        margin-left: -55px;
+        transition: all 0.2s ease-in;
+        .cls-1 {
+            transition: all 0.2s ease-in;
+            animation: colorchange 5s infinite;
+            -webkit-animation: colorchange 5s infinite; /* Chrome and Safari */
+            @keyframes colorchange {
+                0%   {fill: $indigo;}
+                25%  {fill: $teal;}
+                50%  {fill: $blue;}
+                75%  {fill: $teal;}
+                100% {fill: $indigo;}
+            }
+
+            @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+            {
+                0%   {fill: $indigo;}
+                25%  {fill: $teal;}
+                50%  {fill: $blue;}
+                75%  {fill: $teal;}
+                100% {fill: $indigo;}
+            }
+        }
+        .first-dot,
+        .second-dot,
+        .last-dot{
+            animation: showdots 5s infinite;
+            -webkit-animation: showdots 5s infinite;
+             animation-duration: 1.4s;
+             -webkit-animation-duration: 1.4s;
+        }
+        .second-dot {
+            animation-delay: .2s;
+            -webkit-animation-delay: .2s;
+        }
+        .last-dot{
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s;
+        }
+        @keyframes showdots {
+            0% {opacity: .2; fill: $indigo;}
+            25%  {opacity: 1;fill: $teal;}
+            50%  {fill: $blue;}
+            75%  {fill: $teal;}
+            100% {opacity: .2; fill: $indigo;}
+        }
+    }
 }
 
 $color-1: $teal !default;
@@ -4523,10 +4582,10 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 
 // =============== FIREFOX AREA =============== //
 
-@-moz-document url-prefix() { 
-    .slanted-left {
-        right: 534px;
-        border-bottom: 74px solid #0cb1aa;
-        border-left: 64px solid transparent;
-    }
-}
+//@-moz-document url-prefix() { 
+//    .slanted-left {
+//        right: 534px;
+//        border-bottom: 74px solid #0cb1aa;
+//        border-left: 64px solid transparent;
+//    }
+//}
