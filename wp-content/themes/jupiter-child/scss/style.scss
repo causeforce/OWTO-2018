@@ -698,6 +698,34 @@ button {
 //    }
 //}
 
+%line-hover-effect {
+    &::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $indigo;
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+        -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+        transition: opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    &:hover,
+    &:focus{
+        &::after {
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+}
+
 %link-hover-effect{
     display: inline-block;
     vertical-align: middle;
@@ -1182,9 +1210,7 @@ ul#menu-main_menu {
         &:nth-child(-n+3){
             margin-right: 10px;
             transition: all 0.2s ease-in;
-            &:hover {
-                border-bottom: 3px solid $indigo;
-            }
+            @extend %line-hover-effect;
             a {
                 font-size: 18px;
                 padding-left: 5px;
@@ -1382,6 +1408,9 @@ ul#menu-main_menu {
 
 #mk-footer{
     background-color: $indigo !important;
+    .widget {
+        margin-bottom: 20px;
+    }
     .footer-wrapper{
 //        max-width: 1250px;
         @media screen and (max-width: 1096px) {
@@ -1443,7 +1472,7 @@ ul#menu-main_menu {
                             padding-right: 70px;
                             font-size: 30px;
                             width: 100%;
-                            height: 100%;
+                            height: auto;
                             line-height: 1.5;
                         }
                     }
@@ -2532,7 +2561,7 @@ display: inline-block;
                     }
                 }
                 &:nth-child(n+4) {
-                    border-bottom: 1px solid $purple;
+                    border-bottom: 1px solid $indigo;
                     transition: all 0.2s ease-in;
                     a {
                         color: $indigo !important;
@@ -2627,8 +2656,8 @@ display: inline-block;
             height: 60px;
         }
         .mk-responsive-wrap {
-            top: 60px;
-            height: 83vh;
+//            top: 60px;
+            height: 100vh;
             max-height: 999px !important;
         }
         .header-logo.fit-logo-img.add-header-height {
@@ -2679,14 +2708,7 @@ display: inline-block;
 }
 
 // === CAROUSEL STYLING === //
-.icon-next,
-.icon-prev{
-    height: 30px !important;
-    width: 30px !important;
-    font-size: 40px !important;
-    color: $white;
-    display: none !important;
-}
+
 .vc_images_carousel {
     .vc_carousel-indicators {
         bottom: -30px !important;
@@ -2694,7 +2716,7 @@ display: inline-block;
             bottom: -35px !important;
         }
         li.vc_active {
-            background-color: $blue !important;
+            background-color: $indigo !important;
             width: 15px !important;
             height: 15px !important;
             border: none !important;
@@ -3089,38 +3111,30 @@ display: inline-block;
     z-index: 1000;
     background: $white;
     background-size: cover;
-    svg {
-        max-width: 120px;
+    .preloader-txt {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-top: -75px;
-        margin-left: -55px;
-        transition: all 0.2s ease-in;
-        .cls-1 {
-            transition: all 0.2s ease-in;
-            animation: colorchange 5s infinite;
-            -webkit-animation: colorchange 5s infinite; /* Chrome and Safari */
-            @keyframes colorchange {
-                0%   {fill: $indigo;}
-                25%  {fill: $teal;}
-                50%  {fill: $blue;}
-                75%  {fill: $teal;}
-                100% {fill: $indigo;}
-            }
-
-            @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-            {
-                0%   {fill: $indigo;}
-                25%  {fill: $teal;}
-                50%  {fill: $blue;}
-                75%  {fill: $teal;}
-                100% {fill: $indigo;}
-            }
+        top: 55%;
+        margin-left: -30px;
+        font-family: 'National Bold', Helvetica, sans-serif;
+        animation: walkingtext 7s infinite;
+        -webkit-animation: walkingtext 7s infinite;
+        @keyframes walkingtext {
+            from {left: 50%;}
+            to {left: 100%;}
+            0%   {color: $teal;}
+            50%  {color: $indigo;}
+            100% {color: $teal;}
+        }
+        @-webkit-keyframes walkingtext {
+            from {left: 50%;}
+            to {left: 100%;}
+            0%   {color: $teal;}
+            50%  {color: $indigo;}
+            100% {color: $teal;}
         }
         .first-dot,
         .second-dot,
-        .last-dot{
+        .third-dot {
             animation: showdots 5s infinite;
             -webkit-animation: showdots 5s infinite;
              animation-duration: 1.4s;
@@ -3130,228 +3144,38 @@ display: inline-block;
             animation-delay: .2s;
             -webkit-animation-delay: .2s;
         }
-        .last-dot{
+        .third-dot{
             animation-delay: .4s;
             -webkit-animation-delay: .4s;
         }
-        @keyframes showdots {
+         @keyframes showdots {
             0% {opacity: .2; fill: $indigo;}
-            25%  {opacity: 1;fill: $teal;}
-            50%  {fill: $blue;}
-            75%  {fill: $teal;}
+            25%  {opacity: 1; fill: $teal;}
+            50%  {opacity: .2; fill: $blue;}
+            75%  {opacity: 1; fill: $teal;}
             100% {opacity: .2; fill: $indigo;}
         }
     }
-}
-
-$color-1: $teal !default;
-$color-2: $indigo !default;
-$color-3: $teal  !default;
-$color-4: $indigo !default;
-
-// Timing
-$container-rotate-timing:           1600ms !default;
-$spinner-fill-unfill-rotate-timing: 4800ms !default;
-
-
-$spinner-line-count: 4;
-
-$spinner-left-spin:  $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
-$spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
-
-
-.spinner {
-    position: absolute;
-    margin: -50px 0 0 -30px;
-    height: 80px;
-    top: 50%;
-    left: 50%;
-    width: 80px;
-    /* Spins external container */
-    animation: container-rotate #{$container-rotate-timing} linear infinite;
-    z-index: 1001;
-}
-
-.spinner-line {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-}
-
-.spinner-line--1 {
-    border-color: $color-1;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-1-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-
-}
-
-.spinner-line--2 {
-    border-color: $color-2;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-2-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-}
-
-.spinner-line--3 {
-    border-color: $color-3;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-3-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-}
-
-.spinner-line--4 {
-    border-color: $color-4;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-4-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-
-}
-
-.spinner-line-cog {
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    border-color: inherit;
-}
-
-.spinner-line-cog-inner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 200%;
-    box-sizing: border-box;
-    height: 100%;
-    border-width: 3px;
-    border-style: solid;
-    border-color: inherit;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    animation: none;
-}
-
-.spinner-line-cog-inner--left {
-        border-right-color: transparent;
-        transform: rotate(129deg);
-        animation: left-spin #{$spinner-left-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-}
-
-.spinner-line-cog-inner--right {
-        left: -100%;
-        border-left-color: transparent;
-        transform: rotate(-129deg);
-        animation: right-spin #{$spinner-right-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-}
-
-.spinner-line-cog-inner--center {
-    width: 1000%;
-    left: -450%;
-}
-
-.spinner-line-ticker {
-    position: absolute;
-    box-sizing: border-box;
-    top: 0;
-    left: 45%;
-    width: 10%;
-    height: 100%;
-    overflow: hidden;
-    border-color: inherit;
-}
-
-// ===============================
-// Animations
-// ===============================
-
-@keyframes container-rotate {
-    to {
-        transform: rotate(360deg);
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        max-width: 120px;
+        margin-top: -75px;
+        margin-left: -55px;
+        transition: all 0.2s ease-in;
+        animation: walking 7s infinite;
+        -webkit-animation: walking 7s infinite;
+        @keyframes walking {
+            from {left: 50%;}
+            to {left: 100%;}
+        }
+        @-webkit-keyframes walking {
+            from {left: 50%;}
+            to {left: 100%;}
+        }
     }
 }
-
-@keyframes fill-unfill-rotate {
-    12.5% {
-        transform: rotate(135deg);
-    }
-    25% {
-        transform: rotate(270deg);
-    }
-    37.5% {
-        transform: rotate(405deg);
-    }
-    50% {
-        transform: rotate(540deg);
-    }
-    62.5% {
-        transform: rotate(675deg);
-    }
-    75% {
-        transform: rotate(810deg);
-    }
-    87.5% {
-        transform: rotate(945deg);
-    }
-    to {
-        transform: rotate(1080deg);
-    }
-}
-
-@keyframes left-spin {
-    0% {
-        transform: rotate(130deg);
-    }
-    50% {
-        transform: rotate(-5deg);
-    }
-    to {
-        transform: rotate(130deg);
-    }
-}
-@keyframes right-spin {
-    0% {
-        transform: rotate(-130deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-    to {
-        transform: rotate(-130deg);
-    }
-}
-
-// This could be automated
-
-@keyframes line-1-fade-in-out{
-    0%{opacity:1}
-    25%{opacity:1}
-    26%{opacity:0}
-    89%{opacity:0}
-    90%{opacity:1}
-    to{opacity:1}
-}
-
-
-@keyframes line-2-fade-in-out{
-    0%{opacity:0}
-    15%{opacity:0}
-    25%{opacity:1}
-    50%{opacity:1}
-    51%{opacity:0}
-}
-
-@keyframes line-3-fade-in-out{
-    0%{opacity:0}
-    40%{opacity:0}
-    50%{opacity:1}
-    75%{opacity:1}
-    76%{opacity:0}
-}
-
-@keyframes line-4-fade-in-out{
-    0%{opacity:0}
-    65%{opacity:0}
-    75%{opacity:1}
-    90%{opacity:1}
-    to{opacity:0}
-}
-
 
 // ===== OneWalk (Updated) Fundraising Page ===== //
 
@@ -3562,7 +3386,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
         select.et-mobile-tabs {
             font-size: 18px !important;
             height: 60px !important;
-            border: 2px solid black !important;
+            border: 2px solid $body-copy !important;
             text-shadow: none !important;
             font-family: $h-font !important;
             line-height: 24px !important; 
@@ -4407,6 +4231,8 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 // =============== OneWalk OneStop Page =============== // 
 .morelink {
     color: #6b767d;
+    font-family: $h-font;
+    font-family: "National Black", Helvetica, sans-serif;
 }
 .onestop-green-columns {
     .desktop-image {
@@ -4580,6 +4406,10 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
 }
 
+#sub-footer {
+    display: none;
+}
+
 // =============== FIREFOX AREA =============== //
 
 //@-moz-document url-prefix() { 
@@ -4589,3 +4419,93 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 //        border-left: 64px solid transparent;
 //    }
 //}
+
+// =============== IE FIXES =============== //
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .footer-ribbon-container .first-footer-row img {
+        top: 30px;
+    }
+    .footer-ribbon-container .first-footer-row .rexall-column img,
+    .footer-ribbon-container .first-footer-row .cibc-column img {
+        top: 0px;
+        margin-top: -30px;
+    }
+    .footer-ribbon-container .first-footer-row p {
+        margin-bottom: 0px;
+    }
+    .preloader-wrapper svg {
+        top: 5%;
+    }
+     .preloader-wrapper img {
+         max-width: 120px;
+    }
+    .preloader-wrapper .preloader-txt {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-left: -15px;
+        animation: walkingtext 5s infinite;
+        -ms-animation: walkingtext 5s infinite;
+        @-ms-keyframes walkingtext {
+            0% {left: 50%;}
+            100% {left: 100%;}
+        }
+        @keyframes walkingtext {
+            0% {left: 50%;}
+            100% {left: 100%;}
+        }
+    }
+}
+
+// Custom Accordion Styling
+//.ow-accordion h4:after {
+//    content: "\f067";
+//    position: absolute;
+//    right: 10px;
+//    font-family: $a-font;
+//    color: $teal;
+//}
+//
+//.ow-accordion h4 .active-link:after {
+//    content: "\f068";
+//    position: absolute;
+//    right: 10px;
+//    font-family: $a-font;
+//    color: $teal;
+//}
+
+// Select Global Arrow Change
+
+#theme-page select:not(.gfield_select) {
+    background: url(../jupiter-child/img/chevron_down.svg) 96% center no-repeat;
+    background-size: 20px;
+    color: #6b767d;
+}
+
+// Home indicator styling
+
+.ms-bullets.ms-dir-h.ms-align-bottom {
+    width: auto !important;
+    bottom: 0px !important;
+    .ms-bullets-count {
+        right: auto;
+    }
+    @media screen and (max-width: 768px) {
+        bottom: inherit !important;
+        right: auto;
+        left: 50%;
+        margin-left: -45px;
+    }
+}
+
+.ms-skin-default .ms-bullet {
+    background: url(../jupiter-child/img/light_indicator.png) center center;
+    height: 25px;
+    width: 25px;
+}
+
+.ms-skin-default .ms-bullet-selected {
+    background: url(../jupiter-child/img/indigo_indicator.png) center center;
+    height: 25px;
+    width: 25px;
+}

@@ -46,9 +46,9 @@ $(document).ready(function () {
         
         // Ambassador Levels to have award info for mobile
         var awardsBronze = '.awards-one p, .awards-two p';
-        var awardsSilver = '.awards-one p, .awards-two p, .awards-three p';
-        var awardsGold = '.awards-one p, .awards-two p, .awards-three p, .awards-four p';
-        var awardsPlat = '.awards-one p, .awards-two p, .awards-three p, .awards-four p, .awards-five p';
+        var awardsSilver = awardsBronze + ', .awards-three p';
+        var awardsGold = awardsSilver + ', .awards-four p';
+        var awardsPlat = awardsGold + ', .awards-five p';
         
          // Variable to hold all the levels
         var allLevels = '.ambassador-bronze, .ambassador-silver, .ambassador-gold, .ambassador-platinum';

@@ -9,6 +9,16 @@ $(document).ready(function () {
         }
     });
     
+    // OneWalk new accordion to work better than VC accordion
+    $('.ow-accordion h4').addClass('plusTitle');
+    $('.ow-accordion h4').on('click', function(){
+        $(this).siblings('p').slideToggle();
+        $(this).siblings('ul').slideToggle();
+        $(this).addClass('active-link');
+        $(this).toggleClass('minusTitle', 'plusTitle');
+        $('.ow-accordion h4').not(this).removeClass('active-link');
+    });
+    
     // OneWalk Dynamically Set Color of Header Title per Border-bottom color  
     function slantedTitleColorSwitcher(elementID) {
         if ($(elementID).hasClass('pink-header-pg-row')) {
@@ -43,7 +53,7 @@ $(document).ready(function () {
 //        $('.lvl-description', this).height(tallestBox);
 //    });
     
-    // OneWalk FAQ Page
+    // OneWalk Accordion to add on active-link class
     $('.vc_tta-title-text').on('click', function() {
         $(this).addClass('active-link');
         $('.vc_tta-title-text').not(this).removeClass('active-link');
@@ -96,13 +106,17 @@ $(document).ready(function () {
     
     $('#mk-footer').prepend(footerTopDiv);
     
+//    $(window).on('load',function(){
+//       $('.preloader-wrapper').delay(400).fadeOut(800); 
+//    });
+    
 }); // END Document Ready
 
 // BEGIN Window Load Function
 $(window).on("load",function(){
     //Preload to FadeOut on Load
     $('div.spinner').fadeOut('slow');
-    $('.preloader-wrapper').css('display', 'none');
+    $('.preloader-wrapper').delay(400).fadeOut(800);
 
     // View More or Less Plugin for Text
    (function($) {
@@ -158,7 +172,7 @@ $(window).on("load",function(){
     // Class with options for More/Less Text
     $(".more-less-text>p").shorten({
         "showChars" : 170,
-        "moreText"	: "See More",
-        "lessText"	: "Show Less",
+        "moreText"	: "Read more",
+        "lessText"	: "Read less",
     });
 });

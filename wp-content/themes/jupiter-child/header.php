@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html <?php echo language_attributes();?> >
 <head>
+    <!-- FB -->
+    <meta property="fb:app_id"          content="290561028090535" /> 
+    <meta property="og:type"            content="website" /> 
+    <meta property="og:url"             content="http://toronto.onewalk.ca/" /> 
+    <meta property="og:title"           content="The Rexall OneWalk To Conquer Cancer" /> 
+    <meta property="og:image"           content="http://toronto.onewalk.ca/wp-content/themes/jupiter-child/img/fb_share.jpg" /> 
+    <meta property="og:description"    content="United as one. Walking to conquer the cancer that matters most to each of us. Walk with me or make a donation by visiting onewalk.ca today!" />
+   
     <?php wp_head(); ?>
 </head>
 
@@ -12,7 +20,10 @@
 	?>
 	
 	<div class="preloader-wrapper">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	    <img src="../wp-content/themes/jupiter-child/img/walker_loader.gif" alt="Walker Walking">
+<!--	    <p class="preloader-txt">Loading<span class="first-dot">.</span><span class="second-dot">.</span><span class="third-dot">.</span></p>-->
+<!--
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 110.8 132.3" style="enable-background:new 0 0 110.8 132.3;" xml:space="preserve">
         <style type="text/css">.cls-1{fill:#332A7E;}</style>
             <g id="Group_5664" transform="translate(5687 14459)">
@@ -60,6 +71,7 @@
                     C104.1,120.5,104.9,119.7,105.9,119.7z"/>
             </g>
         </svg>
+-->
     </div>
   
 
